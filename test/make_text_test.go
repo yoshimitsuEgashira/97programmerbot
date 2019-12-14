@@ -2,6 +2,7 @@ package test
 
 import (
 	"io/ioutil"
+	"os"
 	"strings"
 	"testing"
 	"unsafe"
@@ -10,6 +11,10 @@ import (
 )
 
 func TestMakeText(t *testing.T) {
+	err := os.Chdir("../")
+	if err != nil {
+		t.Errorf("Failed to change directory : %s", err.Error())
+	}
 	text, err := api.MakeText()
 
 	if err != nil {
