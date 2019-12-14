@@ -19,7 +19,7 @@ func TestMakeText(t *testing.T) {
 		t.Error("Tweet text is empty.")
 	}
 
-	rows, err := ioutil.ReadFile("../data/essays.json")
+	rows, err := ioutil.ReadFile("./data/essays.json")
 	if err != nil {
 		t.Errorf("Failed to open file %s", err.Error())
 	}

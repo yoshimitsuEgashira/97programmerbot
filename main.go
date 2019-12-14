@@ -18,10 +18,10 @@ func main() {
 		return
 	}
 
-	tw, err := api.PostTweet(*apiAuth, "", nil)
+	tw, err := api.PostTweet(*apiAuth, t, nil)
 	if err != nil {
 		fmt.Printf("Tweet failed : %s", err.Error())
 		return
 	}
-	fmt.Printf("tw %#v", tw)
+	fmt.Printf("tweet is : %#v\n", tw)
 }
