@@ -11,7 +11,7 @@ func main() {
 
 	t, err := api.MakeText()
 	if err != nil {
-		fmt.Printf("Failed to make tweet text %s", err.Error())
+		fmt.Printf("Failed to make tweet text %s\n", err.Error())
 	}
 	if t == "" {
 		fmt.Println("Tweet text is empty")
@@ -20,7 +20,7 @@ func main() {
 
 	tw, err := api.PostTweet(*apiAuth, t, nil)
 	if err != nil {
-		fmt.Printf("Tweet failed : %s", err.Error())
+		fmt.Printf("Tweet failed : %s\n", err.Error())
 		return
 	}
 	fmt.Printf("tweet is : %#v\n", tw)
