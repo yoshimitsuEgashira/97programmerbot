@@ -14,6 +14,8 @@ type Essay struct {
 	Link   string `json:"link"`
 }
 
+const hashTags = "#エッセイ #エンジニア #プログラマー #プログラマが知るべき97のこと"
+
 func MakeText() (string, error) {
 	var tweetText string
 	rows, err := ioutil.ReadFile("./data/essays.json")
@@ -31,12 +33,12 @@ func MakeText() (string, error) {
 
 	// generate random number
 	rand.Seed(time.Now().UnixNano())
-	n := rand.Intn(6)
+	n := rand.Intn(25)
 
 	for i, e := range essays {
 		if i == n {
-			tweetText = "【 " + e.Title + " 】\n著者：" + e.Author + "\n" + e.Link
+			tweetText = "【 " + e.Title + " 】\n著者 : " + e.Author + "\n\n" + e.Link + "\n\n"
 		}
 	}
-	return tweetText, nil
+	return tweetText + hashTags, nil
 }
