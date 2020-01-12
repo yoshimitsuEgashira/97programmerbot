@@ -1,21 +1,20 @@
 # 97programmerbot
 
 ## Overview
-A bot program that regularly tweeted "97 things programmers should know".<br>
+This is a bot program that regularly tweeted "97 things programmers should know".<br>
 [@97programmerbot](https://twitter.com/97programmerbot)
 
 ## Setup
 
 ### Dependencies
-- Docker version 19.03.5
-- docker-compose version 1.24.1
-- go version go1.12.14 linux/amd64
-- Twitter API
+- Git
+- Docker
+- Twitter ( create your account, auth developer and get keys )
 
 ### Environment variables
 You must apply to Twitter in advance for API usage. And set each acquired key as follows in `.env` . ( Please refer to the sample provided `.env.example` )
 
-```env
+```.env
 CONSUMER_KEY=
 CONSUMER_SECRET=
 ACCESS_TOKEN=
@@ -23,16 +22,19 @@ ACCESS_TOKEN_SECRET=
 ```
 
 ## Usage
+```bash
+# clone this repository
+❯ git clone git@github.com:yoshimitsuEgashira/97programmerbot.git
 
-### Test
-You can test Go by executing the following command.
-```
-❯ docker-compose run app go test -v ./test
-```
+# build
+❯ docker buld --no-cache=true -t 97programmerbot:v1 .
+...
+Successfully built 1234abcd
+Successfully tagged 97programmerbot:v1
 
-### Run
-Execute the command for the `app` service defined in docker-compose.yml.
+# test
+❯ docker run -it 97programmerbot:v1 go run test -v ./test
 
-```
-❯ docker-compose run app go run main.go
+# run
+❯ docker run -it 97programmerbot:v1 go run main.go
 ```
