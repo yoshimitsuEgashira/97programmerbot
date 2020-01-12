@@ -33,12 +33,13 @@ func MakeText() (string, error) {
 
 	// generate random number
 	rand.Seed(time.Now().UnixNano())
-	n := rand.Intn(25)
+	n := rand.Intn(6)
 
 	for i, e := range essays {
 		if i == n {
 			tweetText = "【 " + e.Title + " 】\n著者 : " + e.Author + "\n\n" + e.Link + "\n\n"
 		}
 	}
+	fmt.Printf("Make Text Result : %s\n", tweetText+hashTags)
 	return tweetText + hashTags, nil
 }
