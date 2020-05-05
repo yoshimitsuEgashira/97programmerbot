@@ -20,7 +20,6 @@ func MakeText() (string, error) {
 	var tweetText string
 	rows, err := ioutil.ReadFile("./data/essays.json")
 	if err != nil {
-		fmt.Printf("Failed to read file %s\n", err.Error())
 		return "", err
 	}
 

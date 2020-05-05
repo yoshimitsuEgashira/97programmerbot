@@ -8,6 +8,7 @@ import (
 
 func main() {
 	apiAuth := api.Auth()
+	fmt.Println(apiAuth)
 
 	t, err := api.MakeText()
 	if err != nil {

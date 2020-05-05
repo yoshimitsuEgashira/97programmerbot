@@ -10,6 +10,7 @@ ENV GO111MODULE=on
 RUN set -eux && \
     apk update && \
     apk add --no-cache git && \
-    go get
+    go fmt ./... && \
+    go get -u
 
 CMD ["go", "run", "./main.go"]
