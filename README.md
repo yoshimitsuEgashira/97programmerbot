@@ -24,7 +24,7 @@ ACCESS_TOKEN_SECRET=
 ## Usage
 ```bash
 # clone this repository
-❯ git clone git@github.com:yoshimitsuEgashira/97programmerbot.git
+❯ git clone git@github.com:yossiee/97programmerbot.git
 
 # build
 ❯ docker buld --no-cache=true -t 97programmerbot:v1 .

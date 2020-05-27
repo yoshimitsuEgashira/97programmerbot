@@ -1,16 +1,16 @@
 package api
 
 import (
-	"fmt"
+	"log"
 
 	"github.com/ChimeraCoder/anaconda"
 )
 
-func PostTweet(api anaconda.TwitterApi, text string, urls map[string][]string) (anaconda.Tweet, error) {
-	tw, err := api.PostTweet(text, urls)
+func PostTweet(api anaconda.TwitterApi, text string, urls map[string][]string) error {
+	_, err := api.PostTweet(text, urls)
 	if err != nil {
-		fmt.Printf("Failed to tweet : %s\n", err.Error())
-		return tw, err
+		log.Printf("Failed to tweet : %s\n", err.Error())
+		return err
 	}
-	return tw, nil
+	return err
 }

@@ -1,9 +1,9 @@
 FROM golang:1.12.14-alpine3.10
 
 ENV GOPATH $GOPATH:/go/src
-WORKDIR /go/src/github.com/yoshimitsuEgashira/97programmerbot
+WORKDIR /go/src/github.com/yossiee/97programmerbot
 
-COPY . /go/src/github.com/yoshimitsuEgashira/97programmerbot
+COPY . /go/src/github.com/yossiee/97programmerbot
 
 ENV GO111MODULE=on
 

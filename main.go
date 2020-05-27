@@ -2,33 +2,33 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
+	"time"
 
-	"github.com/yoshimitsuEgashira/97programmerbot/api"
+	"github.com/yossiee/97programmerbot/api"
+	"github.com/yossiee/97programmerbot/scraper"
+)
+
+const (
+	url string = "https://xn--97-273ae6a4irb6e2hsoiozc2g4b8082p.com"
+	max int    = 106
 )
 
 func main() {
-	// scrape
-
-	// make tweet text
-	t, err := api.MakeText()
+	rand.Seed(time.Now().UnixNano())
+	t, u, err := scraper.FetchEssay(rand.Intn(max), url)
 	if err != nil {
-		fmt.Printf("Failed to make tweet text %s\n", err.Error())
-	}
-	if t == "" {
-		fmt.Println("Tweet text is empty")
 		return
 	}
 
-	// twitter api auth
 	apiAuth, err := api.Auth()
 	if err != nil {
 		return
 	}
 
-	// twitter post api
-	_, err = api.PostTweet(*apiAuth, t, nil)
+	text := "【 " + t + " 】\n\n" + u
+	err = api.PostTweet(*apiAuth, text, nil)
 	if err != nil {
-		fmt.Printf("Tweet failed : %s\n", err.Error())
 		return
 	}
 	fmt.Println("tweeted successfully!")

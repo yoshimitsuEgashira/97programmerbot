@@ -1,4 +1,4 @@
-module github.com/yoshimitsuEgashira/97programmerbot
+module github.com/yossiee/97programmerbot
 
 go 1.12
 
