@@ -5,7 +5,7 @@
 [![@97programmerbot](https://img.shields.io/twitter/follow/97programmerbot?label=follow%20me&style=social)](https://twitter.com/97programmerbot)
 
 ## Overview
-This is a bot program that regularly tweeted "97 things programmers should know".
+This is a bot regularly tweeted "97 things programmers should know".
 
 [97 programmer bot \(@97programmerbot\) / Twitter](https://twitter.com/97programmerbot)
 
@@ -13,7 +13,9 @@ This is a bot program that regularly tweeted "97 things programmers should know"
 ### Dependencies
 - Git
 - Docker
-- Twitter ( create your account, auth developer and get keys )
+- Twitter
+    - Create your account
+    - Register developer account and get API keys
 
 ### Environment variables
 You must apply to Twitter in advance for API usage. And set each acquired key as follows in `.env` . ( Please refer to the sample provided `.env.example` )
