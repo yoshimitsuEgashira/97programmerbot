@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/yoshimitsuEgashira/97programmerbot/api"
+	"github.com/yossiee/97programmerbot/api"
 )
 
 func TestAuth(t *testing.T) {

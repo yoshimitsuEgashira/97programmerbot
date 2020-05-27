@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/yoshimitsuEgashira/97programmerbot/api"
+	"github.com/yossiee/97programmerbot/api"
 )
 
 func TestPostTweet(t *testing.T) {
