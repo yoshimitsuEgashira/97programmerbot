@@ -37,9 +37,8 @@ func MakeText() (string, error) {
 
 	for i, e := range essays {
 		if i == n {
-			tweetText = "【 " + e.Title + " 】\n著者 : " + e.Author + "\n\n" + e.Link + "\n\n"
+			tweetText = "【 " + e.Title + " 】 著者 : " + e.Author + "\n\n" + e.Link + "\n\n"
 		}
 	}
-	fmt.Printf("Make Text Result : %s\n", tweetText+hashTags)
 	return tweetText + hashTags, nil
 }
