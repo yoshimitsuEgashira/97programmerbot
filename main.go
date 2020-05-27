@@ -7,8 +7,9 @@ import (
 )
 
 func main() {
-	apiAuth := api.Auth()
+	// scrape
 
+	// make tweet text
 	t, err := api.MakeText()
 	if err != nil {
 		fmt.Printf("Failed to make tweet text %s\n", err.Error())
@@ -18,10 +19,17 @@ func main() {
 		return
 	}
 
-	tw, err := api.PostTweet(*apiAuth, t, nil)
+	// twitter api auth
+	apiAuth, err := api.Auth()
+	if err != nil {
+		return
+	}
+
+	// twitter post api
+	_, err = api.PostTweet(*apiAuth, t, nil)
 	if err != nil {
 		fmt.Printf("Tweet failed : %s\n", err.Error())
 		return
 	}
-	fmt.Printf("tweet is : %#v\n", tw)
+	fmt.Println("tweeted successfully!")
 }
