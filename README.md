@@ -1,8 +1,8 @@
 # 97programmerbot
 
-![](https://img.shields.io/github/go-mod/go-version/yossiee/97programmerbot?style=plastic)
+[![Go](https://img.shields.io/github/go-mod/go-version/yossiee/97programmerbot?style=plastic)](go.mod)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
-![](https://img.shields.io/twitter/url?label=follow%20me%21&style=social&url=https%3A%2F%2Ftwitter.com%2F97programmerbot)
+[![@97programmerbot](https://img.shields.io/twitter/follow/97programmerbot?label=follow%20me&style=social)](https://twitter.com/97programmerbot)
 
 ## Overview
 This is a bot program that regularly tweeted "97 things programmers should know".

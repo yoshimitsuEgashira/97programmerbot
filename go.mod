@@ -1,6 +1,6 @@
 module github.com/yossiee/97programmerbot
 
-go 1.12
+go 1.14
 
 require (
 	github.com/ChimeraCoder/anaconda v2.0.0+incompatible
