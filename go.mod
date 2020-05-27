@@ -1,6 +1,6 @@
 module github.com/yossiee/97programmerbot
 
-go 1.12
+go 1.14
 
 require (
 	github.com/ChimeraCoder/anaconda v2.0.0+incompatible
@@ -13,5 +13,4 @@ require (
 	github.com/garyburd/go-oauth v0.0.0-20180319155456-bca2e7f09a17 // indirect
 	github.com/joho/godotenv v1.3.0
 	golang.org/x/net v0.0.0-20200520182314-0ba52f642ac2 // indirect
-	golang.org/x/tools v0.0.0-20191210221141-98df12377212
 )
