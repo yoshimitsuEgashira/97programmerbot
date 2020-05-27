@@ -19,7 +19,7 @@ func main() {
 		return
 	}
 
-	// twiter api auth
+	// twitter api auth
 	apiAuth, err := api.Auth()
 	if err != nil {
 		return
