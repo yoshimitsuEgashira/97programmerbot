@@ -10,7 +10,7 @@ import (
 func TestAuth(t *testing.T) {
 	credentials := api.Auth()
 	if credentials == nil {
-		t.Errorf("Failed to twiiter authentication")
+		t.Errorf("Twitter verification failed.")
 	}
 	fmt.Println(credentials)
 }
