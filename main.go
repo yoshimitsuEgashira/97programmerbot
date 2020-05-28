@@ -1,35 +1,39 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"math/rand"
 	"time"
 
-	"github.com/yossiee/97programmerbot/api"
-	"github.com/yossiee/97programmerbot/scraper"
+	. "github.com/yossiee/97programmerbot/auth"
+	. "github.com/yossiee/97programmerbot/post"
+	. "github.com/yossiee/97programmerbot/scraper"
 )
 
 const (
-	url string = "https://xn--97-273ae6a4irb6e2hsoiozc2g4b8082p.com"
-	max int    = 106
+	env = "./%s.env"
+	url = "https://xn--97-273ae6a4irb6e2hsoiozc2g4b8082p.com"
+	max = 106
 )
 
 func main() {
 	rand.Seed(time.Now().UnixNano())
-	t, u, err := scraper.FetchEssay(rand.Intn(max), url)
+	t, u, err := FetchEssay(rand.Intn(max), url)
 	if err != nil {
 		return
 	}
 
-	apiAuth, err := api.Auth()
+	a, err := Auth(env)
 	if err != nil {
+		log.Printf("ERROR: %#v\n", err.Error())
 		return
 	}
 
 	text := "【 " + t + " 】\n\n" + u
-	err = api.PostTweet(*apiAuth, text, nil)
+	err = PostTweet(*a, text, nil)
 	if err != nil {
+		log.Printf("Failed to tweet : %s\n", err.Error())
 		return
 	}
-	fmt.Println("tweeted successfully!")
+	log.Println("tweeted successfully!")
 }
