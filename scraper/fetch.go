@@ -10,7 +10,7 @@ import (
 func FetchEssay(n int, url string) (string, string, error) {
 	resp, err := http.Get(url)
 	if err != nil {
-		log.Printf("ERROR: can't get response, %#v", err.Error())
+		log.Printf("ERROR: can't get response, %#v\n", err.Error())
 	}
 	defer resp.Body.Close()
 	if resp.StatusCode != 200 {
@@ -20,7 +20,7 @@ func FetchEssay(n int, url string) (string, string, error) {
 
 	doc, err := goquery.NewDocument(url)
 	if err != nil {
-		log.Printf("ERROR: failed to fetch html, %#v", err.Error())
+		log.Printf("ERROR: failed to fetch html, %#v\n", err.Error())
 		panic(err)
 	}
 
