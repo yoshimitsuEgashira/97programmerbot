@@ -6,8 +6,8 @@ LABEL maintainer="yossiee <ysmtegsr@gmail.com>" \
 
 ENV GO111MODULE on
 
-WORKDIR /go/src/97programmerbot
-COPY . /go/src/97programmerbot
+WORKDIR /go/src/app
+COPY . /go/src/app
 
 RUN set -eux && \
     apk update && \
@@ -15,7 +15,5 @@ RUN set -eux && \
     go build -o app /bin/app
 
 FROM scratch
-
 COPY --from=build /bin/app /bin/app
-
 ENTRYPOINT [ "/bin/app" ]
