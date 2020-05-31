@@ -1,5 +1,4 @@
 name: 'build'
-description: 'Go code test and build on Docker.'
 
 on:
   push:
