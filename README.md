@@ -6,6 +6,8 @@
 [![](https://img.shields.io/docker/pulls/yossiee/97programmer?style=plastic)](https://hub.docker.com/r/yossiee/97programmer)
 [![](https://img.shields.io/docker/cloud/build/yossiee/97programmer?style=plastic)](https://hub.docker.com/r/yossiee/97programmer)
 [![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/yossiee/97programmer?style=plastic)](https://hub.docker.com/r/yossiee/97programmer)
+![build](https://github.com/yossiee/97programmer/workflows/build/badge.svg)
+![cron](https://github.com/yossiee/97programmer/workflows/cron/badge.svg)
 [![@97programmerbot](https://img.shields.io/twitter/follow/97programmerbot?label=follow%20me&style=social)](https://twitter.com/97programmerbot)
 
 ## Overview
