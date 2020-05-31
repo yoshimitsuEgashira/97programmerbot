@@ -1,0 +1,23 @@
+name: 'build'
+description: 'Go code test and build on Docker.'
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+
+jobs:
+  build:
+    name: Build docker image
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Format
+      run: docker build --no-cache=true -t ${{ github.repository }}:${{ github.sha }} .
