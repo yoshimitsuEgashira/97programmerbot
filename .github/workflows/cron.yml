@@ -2,7 +2,7 @@ name: 'cron'
 
 on:
   schedule:
-  - cron: '40 11 * * *'
+  - cron: '*/5 * * * *'
 
 jobs:
   run:
