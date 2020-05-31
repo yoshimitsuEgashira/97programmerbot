@@ -2,6 +2,8 @@ name: 'cron'
 
 on:
   push:
+    feature:
+      - '**'
   schedule:
   - cron: '*/5 * * * *'
 
