@@ -1,4 +1,4 @@
-# 97programmerbot
+# 97programmer
 
 [![Go](https://img.shields.io/github/go-mod/go-version/yossiee/97programmerbot?style=plastic)](go.mod)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
@@ -35,11 +35,11 @@ $ git clone git@github.com:yossiee/97programmerbot.git
 $ cd 97programmerbot && cp .env.example .env
 
 # Build
-$ docker buld --no-cache=true -t 97programmerbot:v1 .
+$ docker build --no-cache=true -t 97programmer:latest .
 
 # Test
-$ docker run -it 97programmerbot:v1 go run test -v ./test
+$ docker run -it --env-file=.env 97programmer:latest go test -v -cover ./...
 
 # Tweet
-$ docker run -it 97programmerbot:v1 go run main.go
+$ docker run -it --env-file=.env 97programmer:latest
 ```

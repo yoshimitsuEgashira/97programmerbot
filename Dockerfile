@@ -1,15 +1,16 @@
-FROM golang:1.12.14-alpine3.10
+FROM golang:1.14-alpine
 
-ENV GOPATH $GOPATH:/go/src
-WORKDIR /go/src/github.com/yossiee/97programmerbot
+LABEL maintainer="yossiee <ysmtegsr@gmail.com>" \
+    image.registry="https://hub.docker.com/r/yossiee/97programmerbot" \
+    image.source="https://github.com/yossiee/97programmerbot"
 
-COPY . /go/src/github.com/yossiee/97programmerbot
+ENV CGO_ENABLED 0
 
-ENV GO111MODULE=on
+WORKDIR /go/src/app
+COPY . /go/src/app
 
 RUN set -eux && \
     apk update && \
-    apk add --no-cache git && \
-    go get
+    apk add --no-cache git
 
-CMD ["go", "run", "./main.go"]
+CMD ["go", "run", "main.go"]

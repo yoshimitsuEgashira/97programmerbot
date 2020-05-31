@@ -11,7 +11,6 @@ import (
 )
 
 const (
-	env = "./%s.env"
 	url = "https://xn--97-273ae6a4irb6e2hsoiozc2g4b8082p.com"
 	max = 106
 )
@@ -23,14 +22,7 @@ func main() {
 		return
 	}
 
-	a, err := Auth(env)
-	if err != nil {
-		log.Printf("ERROR: %#v\n", err.Error())
-		return
-	}
-
-	text := "【 " + t + " 】\n\n" + u
-	err = PostTweet(*a, text, nil)
+	err = PostTweet(*Auth(), "【 "+t+" 】\n\n"+u, nil)
 	if err != nil {
 		log.Printf("Failed to tweet : %s\n", err.Error())
 		return
