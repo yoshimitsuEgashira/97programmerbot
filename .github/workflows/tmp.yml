@@ -1,0 +1,28 @@
+name: 'cron'
+
+on:
+  push:
+  - branches: '**'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set output
+      id: var
+      run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Build the docker image
+      run: docker build --no-cache=true -t ${{ github.repository }}:${{ github.sha }} .
+    - name: Run the docker image
+      env:
+        CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+        CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+        GO111MODULE: on
+      with:
+        IMAGE: ${{ github.repository }}
+        TAG: ${{ steps.var.output.sha_short }}
+      run:　docker run $IMAGE:$TAG && \
