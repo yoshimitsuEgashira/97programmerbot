@@ -1,8 +1,8 @@
 FROM golang:1.14-alpine
 
 LABEL maintainer="yossiee <ysmtegsr@gmail.com>" \
-    image.registry="https://hub.docker.com/r/yossiee/97programmerbot" \
-    image.source="https://github.com/yossiee/97programmerbot"
+    image.registry="https://hub.docker.com/r/yossiee/97programmer" \
+    image.source="https://github.com/yossiee/97programmer"
 
 ENV CGO_ENABLED=0
 
