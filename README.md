@@ -37,7 +37,7 @@ $ cd 97programmerbot && cp .env.example .env
 # Build
 $ docker build --no-cache=true -t 97programmer:latest .
 
-# Exec
+# Test
 $ docker run -it --env-file=.env 97programmer:latest go test -v -cover ./...
 
 # Tweet
