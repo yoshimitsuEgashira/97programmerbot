@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - '**'
-  schedule:
-  - cron: '*/5 * * * *'
+#   schedule:
+#   - cron: '*/5 * * * *'
 
 jobs:
   run:
@@ -28,4 +28,4 @@ jobs:
       with:
         IMAGE: ${{ github.repository }}
         TAG: ${{ steps.var.output.sha_short }}
-      run:　docker run $IMAGE:$TAG && \
+      run:　docker run $IMAGE:$TAG
