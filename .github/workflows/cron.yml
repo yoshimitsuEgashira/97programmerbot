@@ -2,7 +2,7 @@ name: 'cron'
 
 on:
   schedule:
-  - cron: '0 */1 * * *'
+  - cron: '*/10 * * * *'
 
 jobs:
   run:
@@ -10,13 +10,16 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Build docker image
+    - name: Build the docker image
       run: docker build --no-cache=true -t ${{ github.repository }}:${{ github.sha }} .
-    - name: Run the image
+    - name: Run the docker image
       env:
         CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
         CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
         GO111MODULE: on
-      run: docker run -it ${{ github.repository }}:${{ github.sha }}
+      with:
+        IMAGE: ${{ github.repository }}
+        TAG: ${{ GITHUB_SHA::8 }}
+      run: docker run $IMAGE:$TAG
