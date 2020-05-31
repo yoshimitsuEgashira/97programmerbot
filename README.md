@@ -2,10 +2,10 @@
 
 [![Go](https://img.shields.io/github/go-mod/go-version/yossiee/97programmerbot?style=plastic)](go.mod)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
-[![](https://img.shields.io/docker/stars/yossiee/97programmer?style=plastic)]()
-[![](https://img.shields.io/docker/pulls/yossiee/97programmer?style=plastic)]()
-[![](https://img.shields.io/docker/build/yossiee/97programmer?style=plastic)]()
-[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/yossiee/97programmer?style=plastic)]()
+[![](https://img.shields.io/docker/stars/yossiee/97programmer?style=plastic)](https://hub.docker.com/r/yossiee/97programmer)
+[![](https://img.shields.io/docker/pulls/yossiee/97programmer?style=plastic)](https://hub.docker.com/r/yossiee/97programmer)
+[![](https://img.shields.io/docker/cloud/build/yossiee/97programmer?style=plastic)](https://hub.docker.com/r/yossiee/97programmer)
+[![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/yossiee/97programmer?style=plastic)](https://hub.docker.com/r/yossiee/97programmer)
 [![@97programmerbot](https://img.shields.io/twitter/follow/97programmerbot?label=follow%20me&style=social)](https://twitter.com/97programmerbot)
 
 ## Overview
