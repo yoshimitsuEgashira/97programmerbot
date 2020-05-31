@@ -2,7 +2,7 @@ name: 'cron'
 
 on:
   schedule:
-  - cron: '20 * * * *'
+  - cron: '30 11 * * *'
 
 jobs:
   run:
@@ -13,9 +13,9 @@ jobs:
     - name: Build docker image
       run: docker build --no-cache=true -t ${{ github.repository }}:${{ github.sha }} .
     - name: Run the image
-      run: docker run -e ${{ secrets.CONSUMER_KEY }} \
-        -e ${{ secrets.CONSUMER_SECRET }} \
-        -e ${{ secrets.ACCESS_TOKEN }} \
-        -e ${{ secrets.ACCESS_TOKEN_SECRET }} \
+      run: docker run -e CONSUMER_KEY=${{ secrets.CONSUMER_KEY }} \
+        -e CONSUMER_SECRET=${{ secrets.CONSUMER_SECRET }} \
+        -e ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }} \
+        -e ACCESS_TOKEN_SECRET=${{ secrets.ACCESS_TOKEN_SECRET }} \
         -e GO111MODULE=on \
         ${{ github.repository }}:${{ github.sha }}
