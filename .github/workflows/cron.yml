@@ -13,7 +13,7 @@ jobs:
     - name: Build docker image
       run: docker build --no-cache=true -t ${{ github.repository }}:${{ github.sha }} .
     - name: Run the image
-      run: docker run -e CONSUMER_KEY=${{ secrets.CONSUMER_KEY }} \
+      run: docker run -it -e CONSUMER_KEY=${{ secrets.CONSUMER_KEY }} \
         -e CONSUMER_SECRET=${{ secrets.CONSUMER_SECRET }} \
         -e ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }} \
         -e ACCESS_TOKEN_SECRET=${{ secrets.ACCESS_TOKEN_SECRET }} \
