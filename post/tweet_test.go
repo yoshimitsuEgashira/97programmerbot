@@ -7,10 +7,8 @@ import (
 	. "github.com/yossiee/97programmerbot/auth"
 )
 
-const env = "../%s.env"
-
 func TestPostTweetSuccess(t *testing.T) {
-	a, _ := Auth(env)
+	a := Auth()
 
 	err := PostTweet(*a, time.Now().Format("2006年01月02日 15時04分05秒"), nil)
 	if err != nil {
@@ -19,7 +17,7 @@ func TestPostTweetSuccess(t *testing.T) {
 }
 
 func TestPostTweetFail(t *testing.T) {
-	a, _ := Auth(env)
+	a := Auth()
 
 	err := PostTweet(*a, "", nil)
 	if err == nil {
