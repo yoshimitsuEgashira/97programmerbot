@@ -1,0 +1,21 @@
+name: 'cron'
+
+on:
+  schedule:
+  - cron: '0 * * * *'
+
+jobs:
+  run:
+    runs-on:
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Build docker image
+      run: docker build --no-cache=true -t ${{ github.repository }}:${{ github.sha }} .
+    - name: Run the image
+      run: docker run -e ${{ secrets.CONSUMER_KEY }} \
+        -e ${{ secrets.CONSUMER_SECRET }} \
+        -e ${{ secrets.ACCESS_TOKEN }} \
+        -e ${{ secrets.ACCESS_TOKEN_SECRET }} \
+        -e GO111MODULE=on \
+        ${{ github.repository }}:${{ github.sha }}
