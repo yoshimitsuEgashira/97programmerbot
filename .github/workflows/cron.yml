@@ -13,9 +13,10 @@ jobs:
     - name: Build docker image
       run: docker build --no-cache=true -t ${{ github.repository }}:${{ github.sha }} .
     - name: Run the image
-      run: docker run -e CONSUMER_KEY=${{ secrets.CONSUMER_KEY }} \
-        -e CONSUMER_SECRET=${{ secrets.CONSUMER_SECRET }} \
-        -e ACCESS_TOKEN=${{ secrets.ACCESS_TOKEN }} \
-        -e ACCESS_TOKEN_SECRET=${{ secrets.ACCESS_TOKEN_SECRET }} \
-        -e GO111MODULE=on \
-        ${{ github.repository }}:${{ github.sha }}
+      env:
+        CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+        CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        ACCESS_TOKEN_SECRET: ${{ secrets.ACCESS_TOKEN_SECRET }}
+        GO111MODULE: on
+      run: docker run -it ${{ github.repository }}:${{ github.sha }}
