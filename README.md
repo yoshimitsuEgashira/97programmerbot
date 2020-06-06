@@ -16,16 +16,16 @@ This is a bot regularly tweeted "97 things programmers should know".
 
 ## Setup
 ### Dependencies
-- Git
 - Docker
+    - If you want to manage Docker image in the registry like me, create an account for the [docker hub](https://hub.docker.com).
 - Twitter
-    - Create your account
-    - Register developer account and get API keys
+    - Visit [https://twitter.com/signup](https://twitter.com/signup) to create an account
+    - Register developer account and get API keys from [https://developer.twitter.com](https://developer.twitter.com)
 
 ### Environment variables
-You must apply to Twitter in advance for API usage. And set each acquired key as follows in `.env` . ( Please refer to the sample provided `.env.example` )
+You must apply to Twitter in advance for API usage. And set each acquired key as follows in `.env`. ( Please refer to the sample provided `.env.example`. )
 
-```sh
+```.env
 CONSUMER_KEY=
 CONSUMER_SECRET=
 ACCESS_TOKEN=
@@ -35,9 +35,9 @@ ACCESS_TOKEN_SECRET=
 ## Usage
 ```sh
 # Clone this repository
-$ git clone git@github.com:yossiee/97programmerbot.git
+$ git clone git@github.com:yossiee/97programmer.git
 
-$ cd 97programmerbot && cp .env.example .env
+$ cd 97programmer && cp .env.example .env
 
 # Build
 $ docker build --no-cache=true -t 97programmer:latest .
@@ -48,3 +48,6 @@ $ docker run -it --env-file=.env 97programmer:latest go test -v -cover ./...
 # Tweet
 $ docker run -it --env-file=.env 97programmer:latest
 ```
+
+## License
+MIT ©︎ 2020 [@yossiee_jp](https://twitter.com/yossiee_jp)
