@@ -18,6 +18,7 @@ This is a bot regularly tweeted "97 things programmers should know".
 ### Dependencies
 - Docker
     - If you want to manage Docker image in the registry like me, create an account for the [docker hub](https://hub.docker.com).
+    - By the way, this is [the docker image](https://hub.docker.com/r/yossiee/97programmer) of this project.
 - Twitter
     - Visit [https://twitter.com/signup](https://twitter.com/signup) to create an account
     - Register developer account and get API keys from [https://developer.twitter.com](https://developer.twitter.com)
