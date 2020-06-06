@@ -16,12 +16,10 @@ This is a bot regularly tweeted "97 things programmers should know".
 
 ## Setup
 ### Dependencies
-- Docker
-    - If you want to manage Docker image in the registry like me, create an account for the [docker hub](https://hub.docker.com).
-    - By the way, this is [the docker image](https://hub.docker.com/r/yossiee/97programmer) of this project.
-- Twitter
-    - Visit [https://twitter.com/signup](https://twitter.com/signup) to create an account
-    - Register developer account and get API keys from [https://developer.twitter.com](https://developer.twitter.com)
+| software | description |
+| :---: | --- |
+| _Docker_ | <li>If you want to manage Docker image in the registry like me, create an account for the [docker hub](https://hub.docker.com).</li><li>By the way, this is [the docker image](https://hub.docker.com/r/yossiee/97programmer) of this project.</li> |
+| _Twitter_ | <li>Visit [https://twitter.com/signup](https://twitter.com/signup) to create an account.</li><li>Register developer account and get API keys from [https://developer.twitter.com](https://developer.twitter.com)</li> |
 
 ### Environment variables
 You must apply to Twitter in advance for API usage. And set each acquired key as follows in `.env`. ( Please refer to the sample provided `.env.example`. )
