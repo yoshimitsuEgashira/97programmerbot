@@ -27,7 +27,7 @@ func main() {
 		return
 	}
 
-	err = PostTweet(*Auth(), "【 "+t+" 】 著者: "+a+"\n"+p+"…\n"+u, nil)
+	err = PostTweet(*Auth(), "【 "+t+" 】 著者: "+a+"\n\n"+p+"…\n\n"+u, nil)
 	if err != nil {
 		log.Printf("Failed to tweet : %s\n", err.Error())
 		return
