@@ -12,6 +12,8 @@
 ## Overview
 This is a bot regularly tweeted "97 things programmers should know".
 
+![511RPej0BNL _SY291_BO1,204,203,200_QL40_ML2_](https://user-images.githubusercontent.com/38056766/119687988-9339d980-be82-11eb-87f7-a4286b2b1d00.jpg)
+
 [97 programmer bot \(@97programmerbot\) / Twitter](https://twitter.com/97programmerbot)
 
 ## Setup
@@ -49,4 +51,5 @@ $ docker run -it --env-file=.env 97programmer:latest
 ```
 
 ## License
-MIT ©︎ 2020 [@yossiee_jp](https://twitter.com/yossiee_jp)
+
+MIT
